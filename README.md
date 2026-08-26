@@ -29,6 +29,6 @@ Cuando clone el proyecto revise los siguientes archivos de configuración:
 - [Semana 3: JPA y conexión a base de datos](docs/semana-03/guialaboratorio.md)
 
 ## Documentación General
-- [Conexión a Base de datos](docs/general/basedatos.md)
+- [Conexión a Base de datos](docs/general/basededatos.md)
 - [Modelo de madurez Richardson](docs/general/modelomadurez.md)
 

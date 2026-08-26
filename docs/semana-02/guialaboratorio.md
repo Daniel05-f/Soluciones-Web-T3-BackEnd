@@ -1,3 +1,5 @@
+[← Volver al inicio](../../README.md)
+
 ## Semana 2. Guía de laboratorio / actividad práctica
 
 ### Título de la actividad

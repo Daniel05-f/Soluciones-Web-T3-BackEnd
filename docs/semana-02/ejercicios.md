@@ -1,3 +1,5 @@
+[← Volver al inicio](../../README.md)
+
 ## Ejercicios para practicar
 
 ### I. Ejercicios conceptuales
@@ -12,4 +14,3 @@
 ### III. Mini caso práctico
 Continuando con el sistema de seguimiento de pacientes con anemia (ODS 9), el equipo debe registrar nuevos pacientes desde la aplicación web. Consigna: en grupos de 3 a 4 estudiantes, definan (a) qué patrón de diseño aplicarían para la creación de distintos tipos de reportes clínicos, (b) cómo estructurarían el `PacienteRepository`, y (c) qué validaciones de seguridad incluirían en el endpoint `POST /api/pacientes` para prevenir el registro de datos incompletos o maliciosos, siguiendo las recomendaciones de OWASP (2023).
 
-[← Volver al inicio](../../README.md)

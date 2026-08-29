@@ -1,8 +1,8 @@
-# Backend Aplicación Web para una Oṕtica
+# Backend Aplicación Web para citas médicas
 
 Si su IDE no incluye un generator para Spring Boot use [Spring Initializr](https://start.spring.io/)
 
-Backend para la aplicación web de una óptica el frontend está desarrollado en Angular 22.
+Backend para la aplicación web de citas médicas, el frontend está desarrollado en Angular 22.
 
 Este proyecto es desarrollado como parte del curso Soluciones Web y Aplicaciones Distribuidas con NRC 16045, correspondiente al período UPN 2026-2
 

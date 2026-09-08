@@ -6,20 +6,18 @@ import jakarta.persistence.IdClass;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@IdClass(MenuRolePK.class)
-public class MenuRole {
-    @Id
-    private Menu menu;
+@IdClass(ConsultExamPK.class)
+public class ConsultExam {
 
     @Id
-    private Role role;
+    private Consult consult;
 
-    // mas atributos
+    @Id
+    private Exam exam;
+
 }

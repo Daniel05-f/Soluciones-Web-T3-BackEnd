@@ -55,20 +55,20 @@
     </dependency>
 
     <!-- Source: https://mvnrepository.com/artifact/org.postgresql/postgresql -->
-    <!--<dependency>
+    <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <version>42.7.10</version>
       <scope>compile</scope>
-    </dependency>-->
+    </dependency>
 
     <!-- Source: https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
-    <dependency>
+    <!--<dependency>
       <groupId>com.microsoft.sqlserver</groupId>
       <artifactId>mssql-jdbc</artifactId>
       <version>13.5.1.jre11-preview</version>
       <scope>compile</scope>
-    </dependency>
+    </dependency>-->
   </dependencies>
 
   <build>

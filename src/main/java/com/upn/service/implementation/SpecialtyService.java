@@ -1,7 +1,9 @@
 package com.upn.service.implementation;
 
 import com.upn.model.Specialty;
+import com.upn.repository.IGenericRepository;
 import com.upn.repository.ISpecialtyRepository;
+import com.upn.service.IGenericService;
 import com.upn.service.ISpecialtyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,10 +12,15 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class SpecialtyService implements ISpecialtyService {
+public class SpecialtyService extends GenericService<Specialty, Integer> implements ISpecialtyService {
 
     private final ISpecialtyRepository repo;
 
+    @Override
+    protected IGenericRepository<Specialty, Integer> getRepo() {
+        return repo;
+    }
+/*
     @Override
     public Specialty save(Specialty specialty) throws Exception {
         return repo.save(specialty);
@@ -38,5 +45,5 @@ public class SpecialtyService implements ISpecialtyService {
     @Override
     public void delete(Integer id) throws Exception {
         repo.deleteById(id);
-    }
+    }**/
 }

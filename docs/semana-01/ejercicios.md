@@ -1,3 +1,5 @@
+[← Volver al inicio](../../README.md)
+
 ## Ejercicios para practicar
 
 ### I. Ejercicios conceptuales
@@ -14,4 +16,3 @@ Una startup de salud digital está diseñando el backend de una aplicación para
 
 **Consigna:** en los grupos conformados para el proyecto, propongan la estructura de capas (controller, service, repository, model) que usarían, identifiquen qué información viajaría por un endpoint REST típico del sistema (por ejemplo, registrar un nuevo paciente), y sustenten brevemente por qué esa organización favorece la mantenibilidad del proyecto a lo largo del semestre.
 
-[← Volver al inicio](../../README.md)

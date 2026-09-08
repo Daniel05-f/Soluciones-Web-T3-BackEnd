@@ -1,4 +1,4 @@
-# Backend Aplicación Web para citas médicas
+# Sistema Web para gestión de citas médicas - Backend
 
 Si su IDE no incluye un generator para Spring Boot use [Spring Initializr](https://start.spring.io/)
 

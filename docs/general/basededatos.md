@@ -102,6 +102,58 @@ Y la configuración de `application.properties`
     spring.datasource.password=your_password
 ```
 
+#### SQL Server
+Para una conexión a SQL Server considere la siguiente configuración en `pom.xml`
+```
+    <!-- Source: https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+    <dependency>
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>mssql-jdbc</artifactId>
+        <version>13.5.1.jre11-preview</version>
+        <scope>compile</scope>
+    </dependency>
+```
+
+Y la configuración de `application.properties`
+```
+    spring.jpa.database=sql_server
+    spring.jpa.show-sql=false
+    spring.jpa.hibernate.ddl-auto=update
+
+    spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+    # Desde Spring Boot 3.1 (Usa el dialecto adecuado para SQL Server)
+    spring.jpa.database-platform=org.hibernate.dialect.SQLServerDialect
+    # Modifica localhost, puerto y swapp16045 según tu entorno. 
+    # "encrypt=false" evita errores de certificados SSL en entornos de desarrollo local.
+    spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=swapp16046;encrypt=false;trustServerCertificate=true
+    spring.datasource.username=tu_usuario_sql
+    spring.datasource.password=tu_contraseña_sql
+```
+
+Para una autenticación de Windows se requieren en algunos casos configuraciones adiciones.
+Agregue en `pom.xml`
+```
+    <!-- Soporte para Autenticación de Windows (Waffle) -->
+    <dependency>
+        <groupId>com.github.waffle</groupId>
+        <artifactId>waffle-jna</artifactId>
+        <version>3.4.0</version> <!-- Puedes usar la última versión disponible -->
+    </dependency>
+```
+
+Y en `application.properties`
+```
+    spring.jpa.database=sql_server
+    spring.jpa.show-sql=false
+    spring.jpa.hibernate.ddl-auto=update
+    
+    spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+    spring.jpa.database-platform=org.hibernate.dialect.SQLServerDialect
+    
+    # integratedSecurity=true activa la Autenticación de Windows
+    spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=swapp16045;integratedSecurity=true;encrypt=false;trustServerCertificate=true
+```
+
 ### JPA
 
 En el archivo archivo `pom.xml` agregue la dependencia
@@ -110,7 +162,7 @@ En el archivo archivo `pom.xml` agregue la dependencia
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-data-jpa</artifactId>
-        <version>4.0.5</version>
+        <version>4.1.1</version>
         <scope>compile</scope>
     </dependency>
 ```

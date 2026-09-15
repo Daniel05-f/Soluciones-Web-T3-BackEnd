@@ -1,9 +1,7 @@
 package com.upn.config;
 
 import com.upn.dto.ExamDTO;
-import com.upn.dto.SpecialtyDTO;
 import com.upn.model.Exam;
-import com.upn.model.Specialty;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MapperConfig {
     @Bean
-    public ModelMapper modelMapper() {
+    public ModelMapper defaultMapper() {
         return new ModelMapper();
     }
 

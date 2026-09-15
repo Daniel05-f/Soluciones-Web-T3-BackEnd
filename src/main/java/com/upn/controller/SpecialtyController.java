@@ -5,6 +5,7 @@ import com.upn.model.Specialty;
 import com.upn.service.ISpecialtyService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -17,6 +18,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SpecialtyController {
     private final ISpecialtyService service;
+
+    @Qualifier("defaultMapper")
     private final ModelMapper modelMapper;
 
     @GetMapping

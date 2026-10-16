@@ -1,0 +1,31 @@
+package com.upn.dto;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class MedicDTO {
+
+    private Integer idMedic;
+
+    @NotNull
+    private Integer idSpecialty;
+
+    @NotNull
+    private String primaryName;
+
+    @NotNull
+    private String surname;
+
+    @NotNull
+    private String cmpMedic;
+
+    private String photo;
+}
+

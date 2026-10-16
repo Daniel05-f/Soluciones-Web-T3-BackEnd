@@ -31,5 +31,5 @@ public class Medic {
     private String cmp;
 
     @Column(length = 250)
-    private String urlPhoto;
+    private String photoUrl;
 }

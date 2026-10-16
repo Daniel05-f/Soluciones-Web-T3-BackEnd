@@ -20,8 +20,8 @@ public class MedicService extends GenericService<Medic, Integer> implements IMed
         return repo;
     }
 
-    @Override
+    /*@Override
     public List<Medic> topTen() throws Exception {
         return List.of();
-    }
+    }*/
 }

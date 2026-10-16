@@ -1,7 +1,9 @@
 package com.upn.config;
 
 import com.upn.dto.ExamDTO;
+import com.upn.dto.MedicDTO;
 import com.upn.model.Exam;
+import com.upn.model.Medic;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,4 +31,23 @@ public class MapperConfig {
 
         return mapper;
     }
+
+    @Bean
+    public ModelMapper medicMapper() {
+        ModelMapper mapper = new ModelMapper();
+
+        //ESCRITURA POST PUT
+        mapper.createTypeMap(MedicDTO.class, Medic.class)
+                .addMapping(MedicDTO::getPrimaryName, Medic::setFirstName)
+                .addMapping(MedicDTO::getSurname, Medic::setLastName)
+                .addMapping(MedicDTO::getPhoto, Medic::setPhotoUrl);
+
+        //LECTURA GET
+        mapper.createTypeMap(Medic.class, MedicDTO.class)
+                .addMapping(Medic::getFirstName, MedicDTO::setPrimaryName)
+                .addMapping(Medic::getLastName, MedicDTO::setSurname);
+
+        return mapper;
+    }
+
 }

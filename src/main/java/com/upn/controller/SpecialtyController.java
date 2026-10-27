@@ -3,6 +3,10 @@ package com.upn.controller;
 import com.upn.dto.SpecialtyDTO;
 import com.upn.model.Specialty;
 import com.upn.service.ISpecialtyService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -16,6 +20,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/v1/specialties")
 @RequiredArgsConstructor
+@Tag(name = "Especialidades",
+        description = "Operaciones permitidas sobre la entidad de Specialty")
 public class SpecialtyController {
     private final ISpecialtyService service;
 
@@ -31,6 +37,11 @@ public class SpecialtyController {
         return ResponseEntity.ok(list); // 200
     }
 
+    @Operation(summary = "Obtener especialidad por ID", description = "Busca y retorna los detalles de una especialidad usando su identificador único.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Especialidad encontrada con éxito"),
+            @ApiResponse(responseCode = "404", description = "La especialidad solicitado no existe")
+    })
     @GetMapping("/{id}")
     private ResponseEntity<SpecialtyDTO> findById(@PathVariable Integer id) throws  Exception{
         Specialty obj = service.findById(id);

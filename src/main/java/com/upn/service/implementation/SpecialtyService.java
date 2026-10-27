@@ -3,9 +3,10 @@ package com.upn.service.implementation;
 import com.upn.model.Specialty;
 import com.upn.repository.IGenericRepository;
 import com.upn.repository.ISpecialtyRepository;
-import com.upn.service.IGenericService;
 import com.upn.service.ISpecialtyService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,11 @@ public class SpecialtyService extends GenericService<Specialty, Integer> impleme
     @Override
     protected IGenericRepository<Specialty, Integer> getRepo() {
         return repo;
+    }
+
+    @Override
+    public Page<Specialty> listPaginable(Pageable pageable) {
+        return repo.findAll(pageable);
     }
 /*
     @Override

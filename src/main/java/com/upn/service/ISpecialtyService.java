@@ -1,6 +1,8 @@
 package com.upn.service;
 
 import com.upn.model.Specialty;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -10,4 +12,5 @@ public interface ISpecialtyService extends IGenericService<Specialty,Integer> {
     List<Specialty> findAll() throws Exception;
     Specialty findById(Integer id) throws Exception;
     void delete(Integer id) throws Exception;*/
+    Page<Specialty> listPaginable(Pageable pageable);
 }
